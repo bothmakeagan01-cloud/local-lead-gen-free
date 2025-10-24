@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Bump - Scale Your Local Business to $47K/Week</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            animation: fadeInUp 0.8s ease 0.4s both;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Case Study Section */
+        .case-study {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .case-study-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .case-study h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-radius: 15px;
+        }
+
+        .result-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .result-label {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .service-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .process h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        /* Testimonial Section */
+        .testimonial {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .testimonial blockquote {
+            font-size: 1.3em;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: white;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .final-cta p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 50px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .final-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .case-study-content {
+                padding: 25px;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .result-number {
+                font-size: 2em;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta h2 {
+                font-size: 1.8em;
+            }
+
+            .testimonial blockquote {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Profit Bump</div>
+            <a href="https://calendly.com/keaganprofitbump/30min" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>From 0 to $47,000 Weekly Revenue in 90 Days</h1>
+            <p>We took a local LA business from word-of-mouth to 202 leads per week with proven Meta ad systems</p>
+            <a href="https://calendly.com/keaganprofitbump/30min" class="hero-cta">Book Your Free Growth Strategy Call</a>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study">
+        <div class="container">
+            <div class="case-study-content">
+                <h2>🏆 From Word-of-Mouth to $47K/Week</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                    See how we scaled a local LA service business from zero online presence to massive weekly revenue
+                </p>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <span class="result-number">202</span>
+                        <span class="result-label">Leads Per Week</span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-number">$47K</span>
+                        <span class="result-label">Weekly Revenue</span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-number">$39.60</span>
+                        <span class="result-label">Cost Per Lead</span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-number">5.9x</span>
+                        <span class="result-label">Return on Ad Spend</span>
+                    </div>
+                </div>
+
+                <p style="text-align: center; color: #666; margin-top: 30px;">
+                    <strong>Month 1:</strong> Started with $4,000 ad spend → Generated 64 leads per week<br>
+                    <strong>Month 3:</strong> Scaled to $8,000 ad spend → Now generating 202 leads per week
+                </p>
+                <p style="text-align: center; color: #666; margin-top: 20px;">
+                    <strong>The Transformation:</strong> This local LA business went from relying entirely on word-of-mouth referrals to building a predictable, scalable customer acquisition machine that generates $47,000 in weekly revenue.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Value Section -->
+    <section class="free-value" style="padding: 60px 0; background: white;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2em; margin-bottom: 40px; color: #333;">
+                💡 Free Game: 5 Meta Ad Mistakes Killing Your ROI
+            </h2>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="background: #f8f9fa; padding: 40px; border-radius: 20px; margin-bottom: 30px;">
+                    <h3 style="color: #667eea; margin-bottom: 20px;">Mistake #1: Broad Targeting Without Exclusions</h3>
+                    <p style="color: #666; margin-bottom: 15px;">
+                        Most businesses target everyone in their city. Smart move? Target within 5-7 miles of your location and EXCLUDE people who already like your page. You'll cut costs by 40% instantly.
+                    </p>
+                    
+                    <h3 style="color: #667eea; margin-bottom: 20px; margin-top: 30px;">Mistake #2: Not Using Dynamic Creative Testing</h3>
+                    <p style="color: #666; margin-bottom: 15px;">
+                        Upload 3-5 images, 3-5 headlines, and let Meta's AI find the winning combination. We've seen CTR improve by 250% just from this one change.
+                    </p>
+                    
+                    <h3 style="color: #667eea; margin-bottom: 20px; margin-top: 30px;">Mistake #3: Ignoring Your Pixel Data</h3>
+                    <p style="color: #666; margin-bottom: 15px;">
+                        Install the Meta Pixel, set up Conversions API, and track EVERYTHING. Most businesses are flying blind. With proper tracking, you'll know exactly which ads drive revenue.
+                    </p>
+                    
+                    <h3 style="color: #667eea; margin-bottom: 20px; margin-top: 30px;">Mistake #4: Manual Follow-Up Instead of Automation</h3>
+                    <p style="color: #666; margin-bottom: 15px;">
+                        78% of customers buy from the business that responds first. Set up instant SMS responses and you'll book 3x more appointments. We use GHL workflows that text leads within 60 seconds.
+                    </p>
+                    
+                    <h3 style="color: #667eea; margin-bottom: 20px; margin-top: 30px;">Mistake #5: One Campaign Wonder Syndrome</h3>
+                    <p style="color: #666; margin-bottom: 15px;">
+                        Running one campaign? You're leaving money on the table. Run 3 campaigns minimum: Cold traffic for new customers, retargeting for website visitors, and a loyalty campaign for past customers.
+                    </p>
+                </div>
+                
+                <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border-radius: 20px;">
+                    <h3 style="color: #333; margin-bottom: 20px;">Want to See Exactly How We Generated 202 Leads/Week?</h3>
+                    <p style="color: #666; margin-bottom: 25px;">
+                        These tips are just the beginning. On our strategy call, we'll show you the exact ad sets, audiences, and automations we used to scale from $0 to $47K weekly revenue. No fluff, just proven systems.
+                    </p>
+                    <a href="https://calendly.com/keaganprofitbump/30min" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-size: 1.1em; font-weight: 600; transition: transform 0.3s;">
+                        Get Your Free Strategy Breakdown →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>Our Complete Marketing Ecosystem</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Meta Ads Mastery</h3>
+                    <p>Laser-targeted Facebook and Instagram campaigns that reach your ideal customers when they're most likely to buy. We create compelling ad creatives and copy that converts.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Advanced Tracking & Analytics</h3>
+                    <p>Know exactly where every dollar goes with pixel-perfect tracking, conversion attribution, and real-time dashboards that show your true ROI.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>GHL Integration</h3>
+                    <p>Seamless GoHighLevel setup that centralizes all your leads, automates follow-ups, and manages your entire customer journey in one powerful platform.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>AI-Powered Ad Generation</h3>
+                    <p>Create endless variations of high-converting ads with our AI tools. Test faster, scale what works, and stay ahead of ad fatigue.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Automated Workflows</h3>
+                    <p>Never lose another lead with instant SMS and email follow-ups, appointment reminders, and nurture sequences that book themselves.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Revenue Optimization</h3>
+                    <p>Maximize customer lifetime value with strategic upsells, review campaigns, and retention systems that keep customers coming back.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <h2>Your Path to Growth</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Strategy Session</h3>
+                    <p>We analyze your business, competition, and market to create a custom growth plan</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>System Setup</h3>
+                    <p>Install tracking pixels, configure GHL, and build your automated marketing machine</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Launch Campaigns</h3>
+                    <p>Deploy high-converting Meta ads with AI-generated creatives and proven copy</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Optimize & Scale</h3>
+                    <p>Continuously improve performance and scale what works to maximize your ROI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <blockquote>
+                    "We were stuck doing word-of-mouth for years. In just 3 months, Profit Bump built us a marketing machine that brings in 200+ leads every single week. Our revenue went from inconsistent to $47,000 per week. The ROI is insane - we're getting back $5.90 for every dollar we spend on ads."
+                </blockquote>
+                <p class="testimonial-author">- Local Service Business Owner, Los Angeles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2>Ready to Scale Like This?</h2>
+            <p>Get the exact blueprint we used to generate $47,000 weekly revenue</p>
+            <a href="https://calendly.com/keaganprofitbump/30min" class="final-cta-button">Book Your Free 30-Minute Strategy Call</a>
+            <p style="margin-top: 30px; color: #666; font-size: 1.1em; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <strong>On this call, you'll get:</strong><br>
+                ✓ Analysis of your current marketing gaps<br>
+                ✓ Custom growth roadmap for your business<br>
+                ✓ Live walkthrough of our client's campaigns<br>
+                ✓ Exact costs and timeline to hit your revenue goals
+            </p>
+            <p style="margin-top: 20px; color: #999; font-size: 0.9em;">
+                Limited spots available - Only working with 5 new clients this month
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Profit Bump. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and result cards
+        document.querySelectorAll('.service-card, .result-card, .step').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
